@@ -51,7 +51,7 @@ export default function Nav(props: Props) {
     (props.modeActive === undefined && darkMode);
 
   return (
-    <section
+    <header
       class={`fixed w-full z-10 px-3 ${
         scrolling
           ? (isDarkModeActive ? "bg-white" : "bg-black")
@@ -82,6 +82,6 @@ export default function Nav(props: Props) {
             )
           )}
       </nav>
-    </section>
+    </header>
   );
 }
