@@ -52,13 +52,13 @@ export default function Nav(props: Props) {
 
   return (
     <header
-      class={`fixed w-full z-10 px-3 ${
+      class={`fixed w-full z-20 px-3 ${
         scrolling
-          ? (isDarkModeActive ? "bg-white" : "bg-black")
+          ? (isDarkModeActive ? "bg-black" : "bg-white")
           : "bg-transparent"
       }`}
     >
-      <nav class="flex items-center h-[77px] max-w-[1320px] m-auto relative pb-2">
+      <nav class="flex items-center h-[77px] xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full m-auto relative pb-2">
         {isDarkModeActive
           ? (
             !!props.brandLogoDark && (
