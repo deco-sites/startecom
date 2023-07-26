@@ -20,6 +20,23 @@
     -moz-appearance: textfield;
     appearance: textfield;
   }
+
+  .line::before {
+    display: flex;
+    content: "";
+    position: relative;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: -15px;
+    width: 41px;
+    height: 1px;
+    background-color: #e71460;
+  }
+
+  .shadow--primary-2 {
+    box-shadow: 4px 4px 56px rgba(255, 87, 34, 0.3);
+  }
 }
 
 @layer components {
