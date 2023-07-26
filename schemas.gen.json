@@ -90,6 +90,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/startecom/sections/AboutUs.tsx",
               "deco-sites/startecom/sections/Hero.tsx",
               "deco-sites/startecom/sections/HeroArea.tsx",
               "deco-sites/startecom/sections/Nav.tsx",
@@ -3875,9 +3876,9 @@
         }
       ]
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
-      "$ref": "#/root/loaders",
-      "title": "Loader"
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Accounts": {
+      "$ref": "#/root/accounts",
+      "title": "Accounts"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags",
@@ -3887,20 +3888,18 @@
       "$ref": "#/root/sections",
       "title": "Section"
     },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
+      "$ref": "#/root/loaders",
+      "title": "Loader"
+    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
       "$ref": "#/root/pages",
       "title": "Page"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Accounts|Flag|Loader|Page|Section": {
       "anyOf": [
         {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Accounts"
         },
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
@@ -3909,10 +3908,13 @@
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
         },
         {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader"
+        },
+        {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page"
         }
       ],
-      "title": "4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section"
+      "title": "Accounts|Flag|Loader|Page|Section"
     },
     "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp": {
       "type": "object",
@@ -3922,7 +3924,7 @@
           "title": "Key"
         },
         "value": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Accounts|Flag|Loader|Page|Section",
           "title": "Value"
         }
       },
@@ -4943,15 +4945,15 @@
       "type": "object",
       "properties": {
         "query": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "overides the query term",
           "title": "Query"
         },
         "count": {
-          "type": [
-            "number",
-            "null"
-          ],
+          "type": "number",
           "title": "Items per page",
           "description": "number of products per page to display"
         },
@@ -5009,7 +5011,8 @@
             }
           ],
           "type": "string",
-          "title": "Sorting"
+          "title": "Sorting",
+          "default": "relevance"
         },
         "selectedFacets": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvbGlueEltcHVsc2UvdHlwZXMudHM=@SelectedFacet[]",
@@ -5034,7 +5037,7 @@
         }
       },
       "required": [
-        "query"
+        "count"
       ],
       "title": "deco-sites/std/packs/linxImpulse/loaders/search.ts@Props"
     },
@@ -9914,6 +9917,31 @@
       ],
       "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
     },
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Header": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "title": "Key"
+        },
+        "value": {
+          "type": "string",
+          "title": "Value"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "title": "{{{key}}} - {{{value}}}"
+    },
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Header[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Header"
+      },
+      "title": "Header[]"
+    },
     "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Props": {
       "type": "object",
       "properties": {
@@ -9937,6 +9965,11 @@
           ],
           "description": "Host that should be used when proxying the request",
           "title": "Host"
+        },
+        "customHeaders": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Header[]",
+          "description": "custom headers",
+          "title": "Custom Headers"
         }
       },
       "required": [
@@ -10287,6 +10320,113 @@
         "sections"
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn": {
+      "type": "object",
+      "properties": {
+        "titleSubHeading": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title Sub Heading"
+        },
+        "titleHeading": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title Heading"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link"
+        },
+        "linkUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link Url"
+        }
+      },
+      "required": [],
+      "title": "firstColumn"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn"
+      },
+      "title": "firstColumn[]"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@secondColumn": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        }
+      },
+      "required": [],
+      "title": "secondColumn"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn": {
+      "type": "object",
+      "properties": {
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "paragraph": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Paragraph"
+        }
+      },
+      "required": [],
+      "title": "thirdColumn"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn"
+      },
+      "title": "thirdColumn[]"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "firstColumn": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn[]",
+          "title": "First Column"
+        },
+        "secondColumn": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@secondColumn",
+          "title": "Second Column"
+        },
+        "thirdColumn": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn[]",
+          "title": "Third Column"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/startecom/components/ui/Home/AboutUs.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvSGVyby50c3g=@Link": {
       "type": "object",
@@ -13939,6 +14079,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvQWJvdXRVcy50c3g=": {
+      "title": "deco-sites/startecom/sections/AboutUs.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/startecom/sections/AboutUs.tsx"
+          ],
+          "default": "deco-sites/startecom/sections/AboutUs.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvSGVyby50c3g=": {
       "title": "deco-sites/startecom/sections/Hero.tsx",
       "type": "object",
@@ -15428,6 +15589,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvQWJvdXRVcy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvSGVyby50c3g="
