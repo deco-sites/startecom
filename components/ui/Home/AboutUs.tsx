@@ -1,4 +1,5 @@
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 export interface firstColumn {
   titleSubHeading?: string;
@@ -10,6 +11,7 @@ export interface firstColumn {
 
 export interface secondColumn {
   image?: DecoImage;
+  alt?: string;
 }
 
 export interface thirdColumn {
@@ -24,14 +26,56 @@ export interface Props {
 }
 
 export default function AboutUs(props: Props) {
+  const Right = useRef<HTMLDivElement>(null);
+  const Left = useRef<HTMLDivElement>(null);
+  const Up = useRef<HTMLDivElement>(null);
+  const [hasEffectRun, setHasEffectRun] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!hasEffectRun) {
+        const elementRight = Right.current;
+        const elementLeft = Left.current;
+        const elementUp = Up.current;
+        if (elementRight && elementLeft && elementUp) {
+          const rectRight = elementRight.getBoundingClientRect();
+          const rectLeft = elementLeft.getBoundingClientRect();
+          const rectUp = elementUp.getBoundingClientRect();
+          const windowHeight = window.innerHeight ||
+            document.documentElement.clientHeight;
+          if (
+            rectRight.top < windowHeight && rectRight.bottom >= 0 &&
+            rectLeft.top < windowHeight && rectLeft.bottom >= 0 &&
+            rectUp.top < windowHeight && rectUp.bottom >= 0
+          ) {
+            elementRight.classList.add("md:fade-in-from-right");
+            elementLeft.classList.add("md:fade-in-from-left");
+            elementUp.classList.add("md:fade-in-from-up");
+            setHasEffectRun(true);
+            removeEventListener("scroll", handleScroll);
+          }
+        }
+      }
+    };
+
+    addEventListener("scroll", handleScroll);
+
+    return () => {
+      removeEventListener("scroll", handleScroll);
+    };
+  }, [hasEffectRun]);
+
   return (
-    <section class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-3">
+    <section class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-3 overflow-hidden">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:pt-[70px] lg:pb-[60px] md:pt-[80px] md:pb-[40px] pt-[60px] pb-[20px] items-center">
-        <div class="md:col-span-2 lg:col-span-1 xl:pr-[55px] mt-0 lg:mt-[40px]">
+        <div
+          ref={Right}
+          class="md:col-span-2 lg:col-span-1 xl:pr-[55px] mt-0 lg:mt-[40px]"
+        >
           {!!props.firstColumn?.length && (
-            <div class="flex flex-col md:flex-row px-3">
+            <div class="flex flex-col md:flex-row px-3  ">
               {props.firstColumn.map((
-                { titleSubHeading, titleHeading, description, link, linkUrl }
+                { titleSubHeading, titleHeading, description, link, linkUrl },
               ) => (
                 <div class="flex flex-col lg:items-baseline items-center">
                   <span class="text-[#e71460] text-[16px] leading-[28px] pl-[60px] line font-semibold">
@@ -56,14 +100,24 @@ export default function AboutUs(props: Props) {
           )}
         </div>
         <div class="md:col-span-2 lg:col-span-2 sm:grid md:grid-cols-2 lg:mt-0 mt-[40px]">
-          <div class="md:col-span-1 px-3 flex items-center justify-center md:mb-0 mb-[40px]">
+          <div
+            ref={Up}
+            class="md:col-span-1 px-3 flex items-center justify-center md:mb-0 mb-[40px]"
+          >
             {props.secondColumn && props.secondColumn.image && (
               <figure>
-                <img src={props.secondColumn.image} class="m-0" alt="Imagem" />
+                <img
+                  src={props.secondColumn.image}
+                  class="m-0"
+                  alt={props.secondColumn.alt}
+                />
               </figure>
             )}
           </div>
-          <div class="md:col-span-1 lg:col-span-1 xl:pl-[55px] lg:mt-[70px] mt-0">
+          <div
+            ref={Left}
+            class="md:col-span-1 lg:col-span-1 xl:pl-[55px] lg:mt-[70px] mt-0"
+          >
             {!!props.thirdColumn?.length && (
               <div class="flex flex-col px-3">
                 {props.thirdColumn.map(({ subtitle, paragraph }) => (

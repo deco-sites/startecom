@@ -74,6 +74,7 @@
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "deco-sites/std/loaders/x/redirectsFromCsv.ts",
+              "./islands/AboutUs.tsx",
               "./islands/Nav.tsx",
               "$live/handlers/devPage.ts",
               "$live/handlers/fresh.ts",
@@ -9828,10 +9829,124 @@
       ],
       "title": "deco-sites/std/loaders/x/redirectsFromCsv.ts@Redirects"
     },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn": {
+      "type": "object",
+      "properties": {
+        "titleSubHeading": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title Sub Heading"
+        },
+        "titleHeading": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title Heading"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link"
+        },
+        "linkUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link Url"
+        }
+      },
+      "required": [],
+      "title": "firstColumn"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn"
+      },
+      "title": "firstColumn[]"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
       "type": "string",
       "format": "image-uri",
       "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@secondColumn": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt"
+        }
+      },
+      "required": [],
+      "title": "secondColumn"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn": {
+      "type": "object",
+      "properties": {
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "paragraph": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Paragraph"
+        }
+      },
+      "required": [],
+      "title": "thirdColumn"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn"
+      },
+      "title": "thirdColumn[]"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "firstColumn": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn[]",
+          "title": "First Column"
+        },
+        "secondColumn": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@secondColumn",
+          "title": "Second Column"
+        },
+        "thirdColumn": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn[]",
+          "title": "Third Column"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/startecom/components/ui/Home/AboutUs.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL05hdi50c3g=@Props": {
       "type": "object",
@@ -10320,113 +10435,6 @@
         "sections"
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn": {
-      "type": "object",
-      "properties": {
-        "titleSubHeading": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title Sub Heading"
-        },
-        "titleHeading": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title Heading"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "link": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Link"
-        },
-        "linkUrl": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Link Url"
-        }
-      },
-      "required": [],
-      "title": "firstColumn"
-    },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn"
-      },
-      "title": "firstColumn[]"
-    },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@secondColumn": {
-      "type": "object",
-      "properties": {
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        }
-      },
-      "required": [],
-      "title": "secondColumn"
-    },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn": {
-      "type": "object",
-      "properties": {
-        "subtitle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Subtitle"
-        },
-        "paragraph": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Paragraph"
-        }
-      },
-      "required": [],
-      "title": "thirdColumn"
-    },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn"
-      },
-      "title": "thirdColumn[]"
-    },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "firstColumn": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@firstColumn[]",
-          "title": "First Column"
-        },
-        "secondColumn": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@secondColumn",
-          "title": "Second Column"
-        },
-        "thirdColumn": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@thirdColumn[]",
-          "title": "Third Column"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/startecom/components/ui/Home/AboutUs.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvSGVyby50c3g=@Link": {
       "type": "object",
@@ -13749,6 +13757,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0Fib3V0VXMudHN4": {
+      "title": "./islands/AboutUs.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Fib3V0VXMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/AboutUs.tsx"
+          ],
+          "default": "./islands/AboutUs.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL05hdi50c3g=": {
       "title": "./islands/Nav.tsx",
       "type": "object",
@@ -15517,6 +15546,9 @@
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0Fib3V0VXMudHN4"
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL05hdi50c3g="

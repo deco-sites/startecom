@@ -37,6 +37,57 @@
   .shadow--primary-2 {
     box-shadow: 4px 4px 56px rgba(255, 87, 34, 0.3);
   }
+
+ 
+  
+  .fade-in-from-right {
+    animation: fadeInRight 0.5s both;
+    transition: opacity 0.5s, transform 0.5s; /* Adicionando a transição para a animação */
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .fade-in-from-left {
+    animation: fadeInLeft 0.5s both;
+    transition: opacity 0.5s, transform 0.5s; /* Adicionando a transição para a animação */
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .fade-in-from-up {
+    animation: fadeInUp 0.5s both;
+    transition: opacity 0.5s, transform 0.5s; /* Adicionando a transição para a animação */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 }
 
 @layer components {

@@ -5,7 +5,8 @@
 import { DecoManifest } from "$live/types.ts";
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$0 from "./islands/Nav.tsx";
+import * as $$$$$0 from "./islands/AboutUs.tsx";
+import * as $$$$$1 from "./islands/Nav.tsx";
 import * as $$$$$$$$0 from "./sections/AboutUs.tsx";
 import * as $$$$$$$$1 from "./sections/Hero.tsx";
 import * as $$$$$$$$2 from "./sections/HeroArea.tsx";
@@ -173,7 +174,8 @@ const manifest = {
     "./routes/styles.css.ts": $$$$0,
   },
   "islands": {
-    "./islands/Nav.tsx": $$$$$0,
+    "./islands/AboutUs.tsx": $$$$$0,
+    "./islands/Nav.tsx": $$$$$1,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
