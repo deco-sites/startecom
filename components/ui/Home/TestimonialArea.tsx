@@ -1,4 +1,6 @@
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
+import type { HTML } from "deco-sites/std/components/HTMLRenderer.tsx";
+import HTMLRenderer from "deco-sites/std/components/HTMLRenderer.tsx";
 
 export interface SocialMedia {
   icon?: DecoImage;
@@ -9,7 +11,7 @@ export interface SocialMedia {
 export interface Person {
   image?: DecoImage;
   label?: string;
-  title?: string;
+  title?: HTML;
   socialProfile?: Array<SocialMedia>;
 }
 
@@ -37,17 +39,32 @@ export default function TestimonialArea(props: Props) {
         {!!props.heads?.length && (
           <ul class="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 my-[49px] px-[7.5px]">
             {props.heads.map((head) => (
-              <li class="flex flex-col list-none rounded-[15px] cursor-all-scroll px-[7.5px]">
-                <figure class="bg-[#fff] rounded-[15px]">
-                  <img src={head.image} alt={head.label} class="rounded-t-[15px] w-full" width={317} height={407}/>
-                  <figcaption class="card-hover rounded-b-[15px] pt-[15px]">
-                    <h3 class="ml-[45px] text-white text-[21px] leading-[30px] font-semibold">{head.label}</h3>
-                    <p class="ml-[45px] text-[#ffffffb3] text-[13px] font-medium">{head.title}</p>
-                    <ul class="ml-[45px] mb-[10px]">
+              <li class="flex flex-col list-none rounded-[15px] cursor-all-scroll px-[15px]">
+                <figure class="bg-[#fff] rounded-[15px] my-[49px]">
+                  <img
+                    src={head.image}
+                    alt={head.label}
+                    class="rounded-t-[15px] w-full"
+                    width={317}
+                    height={407}
+                  />
+                  <figcaption class="card-hover rounded-b-[15px] pt-[15px] pb-[10px] pl-[45px]">
+                    <h3 class="text-white text-[21px] leading-[30px] font-semibold">
+                      {head.label}
+                    </h3>
+                    <div class="font-medium ql-editor">
+                      <HTMLRenderer html={head.title || ""} />
+                    </div>
+                    <ul class="mt-[15px] mb-[16px]">
                       {head.socialProfile?.map((social) => (
-                        <li>
+                        <li class="mt-15px">
                           <a href={social.link}>
-                            <img src={social.icon} alt={social.alt} width={14} height={16}/>
+                            <img
+                              src={social.icon}
+                              alt={social.alt}
+                              width={14}
+                              height={16}
+                            />
                           </a>
                         </li>
                       ))}
