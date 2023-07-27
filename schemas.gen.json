@@ -97,6 +97,7 @@
               "deco-sites/startecom/sections/Nav.tsx",
               "deco-sites/startecom/sections/ParagraphList.tsx",
               "deco-sites/startecom/sections/SimpleTextList.tsx",
+              "deco-sites/startecom/sections/TestimonialArea.tsx",
               "deco-sites/startecom/sections/Theme.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
@@ -10621,6 +10622,92 @@
       "required": [],
       "title": "deco-sites/startecom/sections/SimpleTextList.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@SocialMedia": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Icon"
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt"
+        }
+      },
+      "required": [],
+      "title": "SocialMedia"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@Person": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "socialProfile": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@SocialMedia"
+          },
+          "title": "Social Profile"
+        }
+      },
+      "required": [],
+      "title": "Person"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "titleSubHeading": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title Sub Heading"
+        },
+        "titleHeading": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "textarea",
+          "title": "Title Heading"
+        },
+        "heads": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@Person"
+          },
+          "title": "Heads"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/startecom/components/ui/Home/TestimonialArea.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvVGhlbWUudHN4@MainColors": {
       "type": "object",
       "properties": {
@@ -14234,6 +14321,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvVGVzdGltb25pYWxBcmVhLnRzeA==": {
+      "title": "deco-sites/startecom/sections/TestimonialArea.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/startecom/sections/TestimonialArea.tsx"
+          ],
+          "default": "deco-sites/startecom/sections/TestimonialArea.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvVGhlbWUudHN4": {
       "title": "deco-sites/startecom/sections/Theme.tsx",
       "type": "object",
@@ -15639,6 +15747,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvU2ltcGxlVGV4dExpc3QudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvVGVzdGltb25pYWxBcmVhLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvVGhlbWUudHN4"
