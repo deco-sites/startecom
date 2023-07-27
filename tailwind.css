@@ -91,6 +91,10 @@
   .card-hover {
     background: linear-gradient(360deg, #fd346e 0%, #fd346e 38.45%);
   }
+
+  .ql-editor:first-of-type {
+    padding: 0;
+  }
   
 }
 
