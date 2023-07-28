@@ -1,1 +1,1 @@
-export { default } from "deco-sites/start/components/ui/Home/AboutUs.tsx";
+export { default } from "deco-sites/startecom/components/ui/Home/AboutUs.tsx";
