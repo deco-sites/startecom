@@ -1,7 +1,8 @@
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
 import type { HTML } from "deco-sites/std/components/HTMLRenderer.tsx";
 import HTMLRenderer from "deco-sites/std/components/HTMLRenderer.tsx";
-
+import useScrollEffects from "deco-sites/startecom/hooks/useScrollEffects.tsx";
+import { useRef } from "preact/hooks";
 export interface SocialMedia {
   icon?: DecoImage;
   link?: string;
@@ -23,19 +24,27 @@ export interface Props {
 }
 
 export default function TestimonialArea(props: Props) {
+  const spanRef = useRef<HTMLDivElement>(null);
+  const h2Ref = useRef<HTMLDivElement>(null);
+  const upRef = useRef<HTMLDivElement>(null);
+
+  useScrollEffects({ Up: spanRef });
+  useScrollEffects({ Up: h2Ref });
+  useScrollEffects({ Up: upRef });
+
   return (
     <section class="bg-[#f3f4f6] md:pt-[135px] md:pb-[110px] sm:pt-[75px] sm:pb-[60px] pt-[55px] pb-[40px] flex flex-col">
       <div class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-3">
         <div class="lg:w-[50%] md:w-[66.66667%] sm:w-[83.33333%] w-full px-3 mb-[10px] flex flex-col items-center mx-auto">
-          <span class="text-[#e71460] text-[16px] leading-[28px] pl-[60px] line font-semibold">
+          <span ref={spanRef} class="text-[#e71460] text-[16px] leading-[28px] pl-[60px] line font-semibold">
             {props.titleSubHeading}
           </span>
-          <h2 class="sm:text-[33px] text-[32px] font-semibold mb-[15px] text-[#262729] text-center">
+          <h2 ref={h2Ref} class="sm:text-[33px] text-[32px] font-semibold mb-[15px] text-[#262729] text-center">
             {props.titleHeading}
           </h2>
         </div>
       </div>
-      <div>
+      <div ref={upRef}>
         {!!props.heads?.length && (
           <ul class="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 my-[49px] px-[7.5px]">
             {props.heads.map((head) => (

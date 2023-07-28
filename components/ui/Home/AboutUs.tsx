@@ -1,6 +1,6 @@
 import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
-import { useEffect, useRef, useState } from "preact/hooks";
-
+import useScrollEffects from "deco-sites/startecom/hooks/useScrollEffects.tsx";
+import { useRef } from "preact/hooks";
 export interface firstColumn {
   titleSubHeading?: string;
   titleHeading?: string;
@@ -26,44 +26,11 @@ export interface Props {
 }
 
 export default function AboutUs(props: Props) {
-  const Right = useRef<HTMLDivElement>(null);
-  const Left = useRef<HTMLDivElement>(null);
-  const Up = useRef<HTMLDivElement>(null);
-  const [hasEffectRun, setHasEffectRun] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!hasEffectRun) {
-        const elementRight = Right.current;
-        const elementLeft = Left.current;
-        const elementUp = Up.current;
-        if (elementRight && elementLeft && elementUp) {
-          const rectRight = elementRight.getBoundingClientRect();
-          const rectLeft = elementLeft.getBoundingClientRect();
-          const rectUp = elementUp.getBoundingClientRect();
-          const windowHeight = window.innerHeight ||
-            document.documentElement.clientHeight;
-          if (
-            rectRight.top < windowHeight && rectRight.bottom >= 0 &&
-            rectLeft.top < windowHeight && rectLeft.bottom >= 0 &&
-            rectUp.top < windowHeight && rectUp.bottom >= 0
-          ) {
-            elementRight.classList.add("md:fade-in-from-right");
-            elementLeft.classList.add("md:fade-in-from-left");
-            elementUp.classList.add("md:fade-in-from-up");
-            setHasEffectRun(true);
-            removeEventListener("scroll", handleScroll);
-          }
-        }
-      }
-    };
-
-    addEventListener("scroll", handleScroll);
-
-    return () => {
-      removeEventListener("scroll", handleScroll);
-    };
-  }, [hasEffectRun]);
+  const { Right, Left, Up } = useScrollEffects({
+    Right: useRef<HTMLDivElement>(null),
+    Left: useRef<HTMLDivElement>(null),
+    Up: useRef<HTMLDivElement>(null),
+  });
 
   return (
     <section class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-3 overflow-hidden">
