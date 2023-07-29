@@ -1,4 +1,5 @@
-import type { Image as DecoImage } from "deco-sites/std/components/types.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 import useScrollEffects from "deco-sites/startecom/hooks/useScrollEffects.tsx";
 import { useRef } from "preact/hooks";
 export interface firstColumn {
@@ -10,7 +11,7 @@ export interface firstColumn {
 }
 
 export interface secondColumn {
-  image?: DecoImage;
+  image?: LiveImage;
   alt?: string;
 }
 
@@ -73,10 +74,12 @@ export default function AboutUs(props: Props) {
           >
             {props.secondColumn && props.secondColumn.image && (
               <figure>
-                <img
+                <Image
                   src={props.secondColumn.image}
                   class="m-0"
                   alt={props.secondColumn.alt}
+                  width={416}
+                  height={510}
                 />
               </figure>
             )}
