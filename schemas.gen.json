@@ -10046,7 +10046,9 @@
           "title": "Alt"
         }
       },
-      "required": [],
+      "required": [
+        "icon"
+      ],
       "title": "SocialMedia"
     },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@Person": {
@@ -10075,7 +10077,9 @@
           "title": "Social Profile"
         }
       },
-      "required": [],
+      "required": [
+        "image"
+      ],
       "title": "Person"
     },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1Rlc3RpbW9uaWFsQXJlYS50c3g=@Props": {
