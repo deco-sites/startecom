@@ -139,7 +139,7 @@ export default function Nav(props: Props) {
                 <figure>
                   <Image
                     src={props.brandLogoDark}
-                    class="w-full"
+                    class="w-full h-[21px]"
                     width={119}
                     height={21}
                     alt={props.brandLogoDarkAlt}
@@ -154,7 +154,7 @@ export default function Nav(props: Props) {
                 <figure>
                   <Image
                     src={props.brandLogoLight}
-                    class="w-full"
+                    class="w-full h-[21px]"
                     width={119}
                     height={21}
                     alt={props.brandLogoLightAlt}
