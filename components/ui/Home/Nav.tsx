@@ -131,7 +131,7 @@ export default function Nav(props: Props) {
     <header
       class={headerClasses}
     >
-      <nav class="flex items-center h-[77px] xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full m-auto relative pb-2">
+      <nav class="flex items-center h-[77px] xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full m-auto relative pb-2 col-xs-11">
         {isDarkModeActive
           ? (
             !!props.brandLogoDark && (

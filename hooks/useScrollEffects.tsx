@@ -23,14 +23,20 @@ const useScrollEffects = ({ Right, Left, Up }: ScrollEffects) => {
           const rectRight = elementRight?.getBoundingClientRect();
           const rectLeft = elementLeft?.getBoundingClientRect();
           const rectUp = elementUp?.getBoundingClientRect();
-          const windowHeight =
-            window.innerHeight || document.documentElement.clientHeight;
+          const windowHeight = window.innerHeight ||
+            document.documentElement.clientHeight;
           if (
-            (!Right || (rectRight && rectRight.top < windowHeight && rectRight.bottom >= 0)) &&
-            (!Left || (rectLeft && rectLeft.top < windowHeight && rectLeft.bottom >= 0)) &&
+            (!Right ||
+              (rectRight && rectRight.top < windowHeight &&
+                rectRight.bottom >= 0)) &&
+            (!Left ||
+              (rectLeft && rectLeft.top < windowHeight &&
+                rectLeft.bottom >= 0)) &&
             (!Up || (rectUp && rectUp.top < windowHeight && rectUp.bottom >= 0))
           ) {
-            if (elementRight) elementRight.classList.add("md:fade-in-from-right");
+            if (elementRight) {
+              elementRight.classList.add("md:fade-in-from-right");
+            }
             if (elementLeft) elementLeft.classList.add("md:fade-in-from-left");
             if (elementUp) elementUp.classList.add("md:fade-in-from-up");
             setHasEffectRun(true);

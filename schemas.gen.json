@@ -81,6 +81,7 @@
               "./islands/Community.tsx",
               "./islands/Nav.tsx",
               "./islands/TestimonialArea.tsx",
+              "./islands/Youtube.tsx",
               "$live/handlers/devPage.ts",
               "$live/handlers/fresh.ts",
               "$live/handlers/proxy.ts",
@@ -105,6 +106,7 @@
               "deco-sites/startecom/sections/SimpleTextList.tsx",
               "deco-sites/startecom/sections/TestimonialArea.tsx",
               "deco-sites/startecom/sections/Theme.tsx",
+              "deco-sites/startecom/sections/Youtube.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configLinxImpulse.global.tsx",
@@ -10206,6 +10208,57 @@
       "required": [],
       "title": "deco-sites/startecom/components/ui/Home/TestimonialArea.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1lvdXR1YmUudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "background": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Background"
+        },
+        "backgroundOverlay": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Background Overlay"
+        },
+        "Title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": " Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "linkUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link Url"
+        },
+        "linkImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Link Image"
+        },
+        "linkAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link Alt"
+        }
+      },
+      "required": [
+        "background",
+        "backgroundOverlay",
+        "linkImage"
+      ],
+      "title": "deco-sites/startecom/components/ui/Home/Youtube.tsx@Props"
+    },
     "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
       "type": "object",
       "properties": {
@@ -14099,6 +14152,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL1lvdXR1YmUudHN4": {
+      "title": "./islands/Youtube.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1lvdXR1YmUudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Youtube.tsx"
+          ],
+          "default": "./islands/Youtube.tsx"
+        }
+      }
+    },
     "JGxpdmUvaGFuZGxlcnMvZGV2UGFnZS50cw==": {
       "title": "Private Fresh Page",
       "description": "Useful for pages under development.",
@@ -14594,6 +14668,27 @@
             "deco-sites/startecom/sections/Theme.tsx"
           ],
           "default": "deco-sites/startecom/sections/Theme.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvWW91dHViZS50c3g=": {
+      "title": "deco-sites/startecom/sections/Youtube.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL1lvdXR1YmUudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/startecom/sections/Youtube.tsx"
+          ],
+          "default": "deco-sites/startecom/sections/Youtube.tsx"
         }
       }
     },
@@ -15910,6 +16005,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1Rlc3RpbW9uaWFsQXJlYS50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1lvdXR1YmUudHN4"
         }
       ]
     },
@@ -16006,6 +16104,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvVGhlbWUudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvWW91dHViZS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
