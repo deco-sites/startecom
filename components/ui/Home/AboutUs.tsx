@@ -34,7 +34,7 @@ export default function AboutUs(props: Props) {
   });
 
   return (
-    <section class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-3 overflow-hidden">
+    <section class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-3 overflow-hidden col-xs-11">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:pt-[70px] lg:pb-[60px] md:pt-[80px] md:pb-[40px] pt-[60px] pb-[20px] items-center">
         <div
           ref={Right}

@@ -9,6 +9,7 @@ import * as $$$$$0 from "./islands/AboutUs.tsx";
 import * as $$$$$1 from "./islands/Community.tsx";
 import * as $$$$$2 from "./islands/Nav.tsx";
 import * as $$$$$3 from "./islands/TestimonialArea.tsx";
+import * as $$$$$4 from "./islands/Youtube.tsx";
 import * as $$$$$$$$0 from "./sections/AboutUs.tsx";
 import * as $$$$$$$$1 from "./sections/Community.tsx";
 import * as $$$$$$$$2 from "./sections/Hero.tsx";
@@ -18,6 +19,7 @@ import * as $$$$$$$$5 from "./sections/ParagraphList.tsx";
 import * as $$$$$$$$6 from "./sections/SimpleTextList.tsx";
 import * as $$$$$$$$7 from "./sections/TestimonialArea.tsx";
 import * as $$$$$$$$8 from "./sections/Theme.tsx";
+import * as $$$$$$$$9 from "./sections/Youtube.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -185,6 +187,7 @@ const manifest = {
     "./islands/Community.tsx": $$$$$1,
     "./islands/Nav.tsx": $$$$$2,
     "./islands/TestimonialArea.tsx": $$$$$3,
+    "./islands/Youtube.tsx": $$$$$4,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
@@ -201,6 +204,7 @@ const manifest = {
     "deco-sites/startecom/sections/SimpleTextList.tsx": $$$$$$$$6,
     "deco-sites/startecom/sections/TestimonialArea.tsx": $$$$$$$$7,
     "deco-sites/startecom/sections/Theme.tsx": $$$$$$$$8,
+    "deco-sites/startecom/sections/Youtube.tsx": $$$$$$$$9,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configLinxImpulse.global.tsx": i2$$$$$7,
