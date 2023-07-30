@@ -40,7 +40,7 @@ export default function HeroArea(props: Props) {
       class="h-full w-full relative xl:pt-[235px] lg:pt-[205px] md:pt-[115px] pt-[130px] xl:pb-[220px] lg:pb-[130px] md:pb-[60px] pb-[40px]"
     >
       <span style={backgroundOverlay} />
-      <div class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto h-full md:pb-[28px] md:mb-[-20px] pb-[15px]">
+      <div class="xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto h-full md:pb-[28px] md:mb-[-20px] pb-[15px] col-xs-11">
         <div class="xl:w-1/2 lg:w-[58.33333%] md:w-[66.66667%] sm:w-[91.66667%] w-full px-3 lg:mt-0 md:mt-[30px] mt-0 mb-[40px]">
           <h1 class="lg:text-[58px] md:text-[48px] text-[38px] z-10 text-white relative mb-[21px] font-semibold leading-tight tracking-[-0.5px]">
             {props.label}
