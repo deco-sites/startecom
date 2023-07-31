@@ -85,7 +85,8 @@ export default function Nav(props: Props) {
         header.style.transform = "translateY(0%)";
         header.style.boxShadow = "0 12px 34px -11px rgba(65, 62, 101, 0.1)";
         header.style.transition = "0.4s";
-      } else if (isDesktop && scrollY > 77) {
+      } else if (isDesktop && scrollY > 0) {
+        header.style.position = "fixed";
         header.style.transform = "translateY(-100%)";
         header.style.boxShadow = "none";
         header.style.transition = "0.4s";
