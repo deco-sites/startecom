@@ -35,10 +35,10 @@ const useScrollEffects = ({ Right, Left, Up }: ScrollEffects) => {
             (!Up || (rectUp && rectUp.top < windowHeight && rectUp.bottom >= 0))
           ) {
             if (elementRight) {
-              elementRight.classList.add("md:fade-in-from-right");
+              elementRight.classList.add("fade-in-from-right");
             }
-            if (elementLeft) elementLeft.classList.add("md:fade-in-from-left");
-            if (elementUp) elementUp.classList.add("md:fade-in-from-up");
+            if (elementLeft) elementLeft.classList.add("fade-in-from-left");
+            if (elementUp) elementUp.classList.add("fade-in-from-up");
             setHasEffectRun(true);
             removeEventListener("scroll", handleScroll);
           }

@@ -42,8 +42,7 @@
 
   .fade-in-from-right {
     animation: fadeInRight 0.5s both;
-    transition: opacity 0.5s, transform 0.5s;
-    /* Adicionando a transição para a animação */
+    transition: opacity 0.3s, transform 0.3s;
   }
 
   @keyframes fadeInRight {
@@ -60,8 +59,7 @@
 
   .fade-in-from-left {
     animation: fadeInLeft 0.5s both;
-    transition: opacity 0.5s, transform 0.5s;
-    /* Adicionando a transição para a animação */
+    transition: opacity 0.3s, transform 0.3s;
   }
 
   @keyframes fadeInLeft {
@@ -78,8 +76,7 @@
 
   .fade-in-from-up {
     animation: fadeInUp 0.5s both;
-    transition: opacity 0.5s, transform 0.5s;
-    /* Adicionando a transição para a animação */
+    transition: opacity 0.3s, transform 0.3s;
   }
 
   @keyframes fadeInUp {
