@@ -57,7 +57,7 @@ export default function AboutUs(props: Props) {
                   </p>
                   <a
                     href={linkUrl}
-                    class="text-white bg-[#e71460] rounded-[50px] p-[5px] leading-[28px] font-semibold w-fit min-w-[183px] h-[56px] text-[15px] inline-flex items-center justify-center shadow--primary-2"
+                    class="text-white bg-[#e71460] rounded-[50px] p-[5px] leading-[28px] font-semibold w-fit min-w-[183px] h-[56px] text-[15px] inline-flex items-center justify-center shadow--primary-2 hover:bg-[#ff7043] hover:border hover:border-[#ff6838]"
                     target="_blank"
                   >
                     {link}
