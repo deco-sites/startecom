@@ -80,15 +80,8 @@ export default function Nav(props: Props) {
     if (header) {
       const scrollY = window.scrollY;
 
-      if (isDesktop) {
-        header.classList.add("fixed");
-        header.classList.remove("absolute");
-      } else {
-        header.classList.remove("fixed");
-        header.classList.add("absolute");
-      }
-
       if (isDesktop && scrollY >= 800) {
+        header.style.position = "fixed";
         header.style.transform = "translateY(0%)";
         header.style.boxShadow = "0 12px 34px -11px rgba(65, 62, 101, 0.1)";
         header.style.transition = "0.4s";
@@ -97,6 +90,7 @@ export default function Nav(props: Props) {
         header.style.boxShadow = "none";
         header.style.transition = "0.4s";
       } else {
+        header.style.position = "absolute";
         header.style.transform = "translateY(0%)";
         header.style.boxShadow = "none";
         header.style.transition = "0.4s";
@@ -123,15 +117,17 @@ export default function Nav(props: Props) {
     applyHeaderStyle();
   }, [windowSize.width]);
 
-  const headerClasses = `w-full z-20 px-3 ${
-    scrolling && isDesktop ? (isDarkModeActive ? "bg-black" : "bg-white") : ""
+  const headerClasses = `w-full z-20 ${
+    scrolling && isDesktop
+      ? (isDarkModeActive ? "bg-[#19191b]" : "bg-white")
+      : ""
   }`;
 
   return (
     <header
       class={headerClasses}
     >
-      <nav class="flex items-center h-[77px] xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full m-auto relative pb-2 col-xs-11">
+      <nav class="flex items-center h-[77px] xl:max-w-[1320px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full m-auto relative md:pb-0 pb-2 px-3 col-xs-11">
         {isDarkModeActive
           ? (
             !!props.brandLogoDark && (
