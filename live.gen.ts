@@ -7,11 +7,10 @@ import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/AboutUs.tsx";
 import * as $$$$$1 from "./islands/Community.tsx";
-import * as $$$$$2 from "./islands/Footer.tsx";
-import * as $$$$$3 from "./islands/Loading.tsx";
-import * as $$$$$4 from "./islands/Nav.tsx";
-import * as $$$$$5 from "./islands/TestimonialArea.tsx";
-import * as $$$$$6 from "./islands/Youtube.tsx";
+import * as $$$$$2 from "./islands/Loading.tsx";
+import * as $$$$$3 from "./islands/Nav.tsx";
+import * as $$$$$4 from "./islands/TestimonialArea.tsx";
+import * as $$$$$5 from "./islands/Youtube.tsx";
 import * as $$$$$$$$0 from "./sections/AboutUs.tsx";
 import * as $$$$$$$$1 from "./sections/Community.tsx";
 import * as $$$$$$$$2 from "./sections/Footer.tsx";
@@ -189,11 +188,10 @@ const manifest = {
   "islands": {
     "./islands/AboutUs.tsx": $$$$$0,
     "./islands/Community.tsx": $$$$$1,
-    "./islands/Footer.tsx": $$$$$2,
-    "./islands/Loading.tsx": $$$$$3,
-    "./islands/Nav.tsx": $$$$$4,
-    "./islands/TestimonialArea.tsx": $$$$$5,
-    "./islands/Youtube.tsx": $$$$$6,
+    "./islands/Loading.tsx": $$$$$2,
+    "./islands/Nav.tsx": $$$$$3,
+    "./islands/TestimonialArea.tsx": $$$$$4,
+    "./islands/Youtube.tsx": $$$$$5,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
