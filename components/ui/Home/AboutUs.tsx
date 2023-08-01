@@ -76,7 +76,7 @@ export default function AboutUs(props: Props) {
               <figure>
                 <Image
                   src={props.secondColumn.image}
-                  class="m-0"
+                  class="m-0 w-full h-full"
                   alt={props.secondColumn.alt}
                   width={416}
                   height={510}
