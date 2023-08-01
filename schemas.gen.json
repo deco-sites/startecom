@@ -79,7 +79,6 @@
               "deco-sites/std/loaders/x/redirectsFromCsv.ts",
               "./islands/AboutUs.tsx",
               "./islands/Community.tsx",
-              "./islands/Footer.tsx",
               "./islands/Loading.tsx",
               "./islands/Nav.tsx",
               "./islands/TestimonialArea.tsx",
@@ -10062,112 +10061,6 @@
       ],
       "title": "deco-sites/startecom/components/ui/Home/Community.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Zvb3Rlci50c3g=@Link": {
-      "type": "object",
-      "properties": {
-        "icon": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Icon"
-        },
-        "alt": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Alt"
-        },
-        "link": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Link"
-        }
-      },
-      "required": [
-        "icon"
-      ],
-      "title": "Link"
-    },
-    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Zvb3Rlci50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "modeActive": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Dark",
-              "default": "Dark"
-            },
-            {
-              "type": "string",
-              "const": "Light",
-              "default": "Light"
-            }
-          ],
-          "type": "string",
-          "description": "Mode Active (either brand logo dark or brand logo light)",
-          "title": "Mode Active"
-        },
-        "brandLogoLight": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "Light version logo (logo must be black)",
-          "title": "Brand Logo Light"
-        },
-        "brandLogoLightAlt": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Text Alternative for Light Mode",
-          "title": "Brand Logo Light Alt"
-        },
-        "brandLogoDark": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "Dark version logo (logo must be white)",
-          "title": "Brand Logo Dark"
-        },
-        "brandLogoDarkAlt": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Text Alternative for Dark Mode",
-          "title": "Brand Logo Dark Alt"
-        },
-        "link": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Link Logo",
-          "title": "Link"
-        },
-        "phrase": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Phrase"
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Zvb3Rlci50c3g=@Link"
-          },
-          "title": "Links"
-        },
-        "copyright": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Copyright"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/startecom/components/ui/Home/Footer.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0xvYWRpbmcudHN4@Props": {
       "type": "object",
       "properties": {
@@ -10822,6 +10715,112 @@
         "sections"
       ],
       "title": "deco-cx/deco/sections/UseSlot.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Zvb3Rlci50c3g=@Link": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Icon"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt"
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link"
+        }
+      },
+      "required": [
+        "icon"
+      ],
+      "title": "Link"
+    },
+    "ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Zvb3Rlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "modeActive": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Dark",
+              "default": "Dark"
+            },
+            {
+              "type": "string",
+              "const": "Light",
+              "default": "Light"
+            }
+          ],
+          "type": "string",
+          "description": "Mode Active (either brand logo dark or brand logo light)",
+          "title": "Mode Active"
+        },
+        "brandLogoLight": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Light version logo (logo must be black)",
+          "title": "Brand Logo Light"
+        },
+        "brandLogoLightAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Text Alternative for Light Mode",
+          "title": "Brand Logo Light Alt"
+        },
+        "brandLogoDark": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Dark version logo (logo must be white)",
+          "title": "Brand Logo Dark"
+        },
+        "brandLogoDarkAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Text Alternative for Dark Mode",
+          "title": "Brand Logo Dark Alt"
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Link Logo",
+          "title": "Link"
+        },
+        "phrase": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Phrase"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Zvb3Rlci50c3g=@Link"
+          },
+          "title": "Links"
+        },
+        "copyright": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Copyright"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/startecom/components/ui/Home/Footer.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGFydGVjb20vc2VjdGlvbnMvSGVyby50c3g=@Link": {
       "type": "object",
@@ -14240,27 +14239,6 @@
         }
       }
     },
-    "Li9pc2xhbmRzL0Zvb3Rlci50c3g=": {
-      "title": "./islands/Footer.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGFydGVjb20vY29tcG9uZW50cy91aS9Ib21lL0Zvb3Rlci50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/Footer.tsx"
-          ],
-          "default": "./islands/Footer.tsx"
-        }
-      }
-    },
     "Li9pc2xhbmRzL0xvYWRpbmcudHN4": {
       "title": "./islands/Loading.tsx",
       "type": "object",
@@ -16213,9 +16191,6 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0NvbW11bml0eS50c3g="
-        },
-        {
-          "$ref": "#/definitions/Li9pc2xhbmRzL0Zvb3Rlci50c3g="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0xvYWRpbmcudHN4"
