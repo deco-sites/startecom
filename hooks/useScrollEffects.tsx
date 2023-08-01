@@ -1,9 +1,10 @@
 import { useEffect, useState } from "preact/hooks";
+import { RefObject } from "preact";
 
 interface ScrollEffects {
-  Right?: preact.RefObject<HTMLDivElement> | null;
-  Left?: preact.RefObject<HTMLDivElement> | null;
-  Up?: preact.RefObject<HTMLDivElement> | null;
+  Right?: RefObject<HTMLDivElement> | null;
+  Left?: RefObject<HTMLDivElement> | null;
+  Up?: RefObject<HTMLDivElement> | null;
 }
 
 const useScrollEffects = ({ Right, Left, Up }: ScrollEffects) => {
@@ -15,33 +16,17 @@ const useScrollEffects = ({ Right, Left, Up }: ScrollEffects) => {
         const elementRight = Right?.current;
         const elementLeft = Left?.current;
         const elementUp = Up?.current;
-        if (
-          (!Right || elementRight) &&
-          (!Left || elementLeft) &&
-          (!Up || elementUp)
-        ) {
-          const rectRight = elementRight?.getBoundingClientRect();
-          const rectLeft = elementLeft?.getBoundingClientRect();
-          const rectUp = elementUp?.getBoundingClientRect();
-          const windowHeight = window.innerHeight ||
-            document.documentElement.clientHeight;
-          if (
-            (!Right ||
-              (rectRight && rectRight.top < windowHeight &&
-                rectRight.bottom >= 0)) &&
-            (!Left ||
-              (rectLeft && rectLeft.top < windowHeight &&
-                rectLeft.bottom >= 0)) &&
-            (!Up || (rectUp && rectUp.top < windowHeight && rectUp.bottom >= 0))
-          ) {
-            if (elementRight) {
-              elementRight.classList.add("fade-in-from-right");
-            }
-            if (elementLeft) elementLeft.classList.add("fade-in-from-left");
-            if (elementUp) elementUp.classList.add("fade-in-from-up");
-            setHasEffectRun(true);
-            removeEventListener("scroll", handleScroll);
-          }
+
+        const isRightVisible = !Right || (elementRight && isElementInViewport(elementRight));
+        const isLeftVisible = !Left || (elementLeft && isElementInViewport(elementLeft));
+        const isUpVisible = !Up || (elementUp && isElementInViewport(elementUp));
+
+        if (isRightVisible && isLeftVisible && isUpVisible) {
+          elementRight?.classList.add("fade-in-from-right");
+          elementLeft?.classList.add("fade-in-from-left");
+          elementUp?.classList.add("fade-in-from-up");
+          setHasEffectRun(true);
+          removeEventListener("scroll", handleScroll);
         }
       }
     };
@@ -57,3 +42,8 @@ const useScrollEffects = ({ Right, Left, Up }: ScrollEffects) => {
 };
 
 export default useScrollEffects;
+
+function isElementInViewport(el: Element) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom >= 0;
+}

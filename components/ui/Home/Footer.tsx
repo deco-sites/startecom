@@ -1,6 +1,5 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
-import { useEffect, useState } from "preact/hooks";
 
 export interface Link {
   icon: LiveImage;
@@ -27,25 +26,8 @@ export interface Props {
 }
 
 export default function Footer(props: Props) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    setDarkMode(prefersDarkMode.matches);
-
-    const handleChange = (event: MediaQueryListEvent) => {
-      setDarkMode(event.matches);
-    };
-
-    prefersDarkMode.addEventListener("change", handleChange);
-
-    return () => {
-      prefersDarkMode.removeEventListener("change", handleChange);
-    };
-  }, []);
-
-  const isDarkModeActive = props.modeActive === "Dark" ||
-    (props.modeActive === undefined && darkMode);
+  const isDarkModeActive =
+    props.modeActive === "Dark" || (!props.modeActive && !!props.brandLogoDark);
 
   return (
     <footer class={`${isDarkModeActive ? "bg-[#19191b]" : "bg-[#f3f4f6]"} pt-[80px] pb-[40px]`}>

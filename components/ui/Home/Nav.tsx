@@ -22,26 +22,11 @@ export interface Props {
 }
 
 export default function Nav(props: Props) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: window.innerWidth,
   });
-
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    setDarkMode(prefersDarkMode.matches);
-
-    const handleChange = (event: MediaQueryListEvent) => {
-      setDarkMode(event.matches);
-    };
-
-    prefersDarkMode.addEventListener("change", handleChange);
-
-    return () => {
-      prefersDarkMode.removeEventListener("change", handleChange);
-    };
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,9 +104,7 @@ export default function Nav(props: Props) {
   }, [windowSize.width]);
 
   const headerClasses = `w-full z-20 ${
-    scrolling && isDesktop
-      ? (isDarkModeActive ? "bg-[#19191b]" : "bg-white")
-      : ""
+    scrolling && isDesktop && isDarkModeActive ? "bg-[#19191b]" : ""
   }`;
 
   return (
